@@ -7,7 +7,7 @@ import java.util.Random;
 /**
 * The ClassMarks program reads students.txt and assignments.txt
 * into two string arrays. It calls GenerateMarks,
-* which uses these arrays to randomly generate marks 
+* which uses these arrays to randomly generate marks
 * (mean 75, SD 10), and outputs the results to marks.csv.
 *
 * @author Remy Skelton
@@ -123,13 +123,16 @@ final class ClassMarks {
         Random randGen = new Random();
 
         // Initialize 2D array to store marks
-        String[][] marksArray = new String[studentsArray.length + 1][assignmentsArray.length + 1];
+        String[][] marksArray =
+        new String[studentsArray.length + 1][assignmentsArray.length + 1];
 
         // Loop through students
-        for (int studentIdx = 0; studentIdx < studentsArray.length + 1; studentIdx++) {
+        for (int studentIdx = 0;
+        studentIdx < studentsArray.length + 1; studentIdx++) {
 
             // Loop through assignments
-            for (int assignIdx = 0; assignIdx < assignmentsArray.length + 1; assignIdx++) {
+            for (int assignIdx = 0;
+            assignIdx < assignmentsArray.length + 1; assignIdx++) {
 
                 // Generate a mark with mean 75 and standard deviation 10
                 int rawMark = (int) (randGen.nextGaussian() * 10 + 75);
